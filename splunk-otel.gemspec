@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/splunk/otel/version"
+require_relative "lib/splunk-otel/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "splunk-otel"

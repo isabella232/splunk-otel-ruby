@@ -1,0 +1,4 @@
+source "https://rubygems.org"
+
+gem "splunk-otel", path: "../../"
+gem "opentelemetry-exporter-jaeger"

@@ -32,12 +32,11 @@ This distribution comes with the following defaults:
 
 Add this gem to your project's `Gemfile` file:
 
-``` ruby
+```ruby
 gem "splunk-otel", "~> 0.1"
 ```
 
-
-``` ruby
+```ruby
 Splunk::Otel.configure
 ```
 
@@ -52,8 +51,15 @@ propagation format set `OTEL_PROPAGATORS` to `b3multi`:
 export OTEL_PROPAGATORS=b3multi
 ```
 
-# License
+## Configure for use with Smart Agent
 
+And exporter called `jaeger-thrift-splunk` is provided and preconfigured to send data to locally (localhost) running instance of [Smart Agent](https://github.com/signalfx/signalfx-agent).
+
+To use it, list it in an environmental variable `OTEL_TRACES_EXPORTER`, e.g. `OTEL_TRACES_EXPORTER=jaeger-thrift-splunk` or `OTEL_TRACES_EXPORTER=otlp,jaeger-thrift-splunk`.
+
+If environmental variable `SPLUNK_REALM` or `OTEL_EXPORTER_JAEGER_ENDPOINT` is set, then the default endpoint mentioned above will be overwritten.
+
+# License
 
 The Splunk OpenTelemetry Ruby distribution is released under the terms of the
 Apache Software License version 2.0. For more details, see [the license

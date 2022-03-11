@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "otel/version"
+require 'opentelemetry/sdk'
+
+require_relative "splunk-otel/version"
+require_relative "splunk-otel/proprietary_exporters"
 
 module Splunk
   # main module for application startup configuration
@@ -15,7 +18,13 @@ module Splunk
       set_default_span_limits
 
       # run SDK's setup function
-      OpenTelemetry::SDK.configure
+      OpenTelemetry::SDK.configure do |configurator|
+        class << configurator
+          prepend ExporterExtensions
+        end
+
+        yield configurator if block_given?
+      end
 
       # set span limits to GDI defaults if not set by the user
       OpenTelemetry.tracer_provider.span_limits = gdi_span_limits
