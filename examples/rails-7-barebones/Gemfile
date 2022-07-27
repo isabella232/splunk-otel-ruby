@@ -11,7 +11,7 @@ gem "rails", "~> 7.0.3"
 
 # instrumentation
 gem "opentelemetry-instrumentation-rails", "~> 0.22.0"
-gem "splunk-otel", path: ENV.fetch("SPLUNK_OTEL_LOCATION", "../../")
+gem "splunk-otel-ruby", path: ENV.fetch("SPLUNK_OTEL_LOCATION", "../../")
 
 # tests
 gem "test-unit", "~> 3.0"

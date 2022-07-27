@@ -2,5 +2,5 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in splunk-otel.gemspec
+# Specify your gem's dependencies in splunk-otel-ruby.gemspec
 gemspec

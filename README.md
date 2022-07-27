@@ -43,7 +43,7 @@ This Splunk distribution comes with the following defaults:
 Install the gem by adding it to your project's `Gemfile`:
 
 ``` ruby
-gem "splunk-otel", "~> 0.1"
+gem "splunk-otel-ruby", "~> 0.1"
 ```
 
 Configure OpenTelemetry using the `Splunk::Otel` module from `splunk/otel`:

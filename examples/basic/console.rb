@@ -6,7 +6,7 @@ require "bundler/inline"
 gemfile do
   source "https://rubygems.org"
 
-  gem "splunk-otel", path: "../../"
+  gem "splunk-otel-ruby", path: "../../"
   gem "opentelemetry-exporter-otlp", "~> 0.21.0"
 end
 
